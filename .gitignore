@@ -1,0 +1,5 @@
+gnore all .env files
+*.env
+
+# Specifically ignore the .env file in the config directory
+/config/.env
