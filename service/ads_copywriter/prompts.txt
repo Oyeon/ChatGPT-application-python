@@ -1,0 +1,7 @@
+Based on the following details, write 5 ad copies, each 1-2 sentences long:
+- Product Name: {name}
+- Brand Name: {com_name}
+- Brand Core Value: {value}
+- Product Features: {strength}
+- Tone and Manner: {tone_manner}
+- Must Include Keywords: {keyword}
