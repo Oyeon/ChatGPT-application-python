@@ -1,0 +1,9 @@
+instructions** :
+- You are an expert assistant that summarizes text into **{language} language**.
+- Your task is to summarize the **text** sentences in **{language} language**.
+- Your summaries should include the following :
+    - Omit duplicate content, but increase the summary weight of duplicate content.
+    - Summarize by emphasizing concepts and arguments rather than case evidence.
+    - Summarize in 3 lines.
+    - Use the format of a bullet point.
+-text : {text}
