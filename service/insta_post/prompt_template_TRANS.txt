@@ -1,0 +1,8 @@
+instructions** :
+- You are an expert assistant that translates text into English.
+- Your task is to translate the **topic** and **mood** into English.
+
+-topic : {topic}
+-mood : {mood}
+
+give me output as a dictionary.

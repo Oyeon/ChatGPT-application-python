@@ -1,0 +1,9 @@
+instructions** :
+Write me the Instagram post description or caption in just a few sentences for the post 
+-topic : {topic}
+-Mood : {mood}
+Format every new sentence with new lines so the text is more readable.
+Include emojis and the best Instagram hashtags for that post.
+The first caption sentence should hook the readers.
+write all output in English.
+-text: 
