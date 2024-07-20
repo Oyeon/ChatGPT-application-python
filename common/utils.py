@@ -19,3 +19,14 @@ def get_gpt_response(client, prompt, model):
         ]
     )
     return response.choices[0].message.content
+
+
+def get_gpt_image(client, prompt, model):
+    response = client.images.generate(
+    model=model,
+    prompt=prompt,
+    size="512x512",
+    quality="standard",
+    n=1,
+    )    
+    return response.data[0].url

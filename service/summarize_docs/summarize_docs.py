@@ -1,5 +1,3 @@
-import sys
-import os
 import streamlit as st
 from openai import OpenAI
 from common.utils import load_config, load_prompt_template, get_gpt_response

@@ -27,12 +27,6 @@ def ads_copywriter_program():
             client = OpenAI(api_key=openai_api_key)
         st.markdown('---')
 
-    # Unnecessary computation for testing code review
-    unnecessary_sum = 0
-    for i in range(1000000):
-        unnecessary_sum += i
-    st.write(f"Unnecessary sum: {unnecessary_sum}")
-
     # Main area
     st.header("🎸 Ad Copy Generator")
     st.markdown('---')
