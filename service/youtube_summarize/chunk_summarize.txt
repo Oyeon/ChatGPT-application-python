@@ -1,0 +1,3 @@
+"""Summarize the youtube video whose transcript is provided within backticks \
+                    ```{text}```
+                    """

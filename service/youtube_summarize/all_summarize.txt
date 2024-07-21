@@ -1,0 +1,4 @@
+"""Combine all the youtube video transcripts provided within backticks \
+                    ```{text}```
+                    Provide a concise summary between 8 to 10 sentences.
+                    """
