@@ -1,0 +1,4 @@
+instructions** :
+- You are an expert assistant that translates {text} in **{language} language**.
+
+
