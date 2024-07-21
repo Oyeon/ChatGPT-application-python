@@ -1,0 +1,4 @@
+instructions** :
+- You are an expert assistant that writes a blog post about {topic}.
+
+
