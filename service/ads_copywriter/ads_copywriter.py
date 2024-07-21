@@ -11,23 +11,32 @@ prompt_template = load_prompt_template()
 ##### Main function #####
 def ads_copywriter_program():
     st.set_page_config(page_title="Ad Copy Generator")
+    
+    initialize_session_state()
+    client = display_sidebar()
+    display_main_area(client)
 
-    if 'openai_api_key' not in st.session_state:
-        st.session_state['openai_api_key'] = ''
-    if 'input_text' not in st.session_state:
-        st.session_state['input_text'] = ''
+def initialize_session_state():
+    session_defaults = {
+        'openai_api_key': '',
+        'input_text': ''
+    }
+    for key, value in session_defaults.items():
+        if key not in st.session_state:
+            st.session_state[key] = value
 
-    # Sidebar
+def display_sidebar():
     with st.sidebar:
-        # Input Open AI API key
         openai_api_key = st.text_input(label='OPENAI API Key', placeholder='Enter Your API Key', value=st.session_state['openai_api_key'], type='password')
-        # Display the input API key
         if openai_api_key:
             st.session_state['openai_api_key'] = openai_api_key
             client = OpenAI(api_key=openai_api_key)
+        else:
+            client = None
         st.markdown('---')
+    return client
 
-    # Main area
+def display_main_area(client):
     st.header("🎸 Ad Copy Generator")
     st.markdown('---')
 
@@ -42,15 +51,18 @@ def ads_copywriter_program():
         brand_core_value = st.text_input("Brand Core Value", placeholder="Enter if necessary")
 
     if st.button("Generate Ad Copy"):
-        prompt = prompt_template.format(
-            name=product_name,
-            com_name=brand_name,
-            value=brand_core_value,
-            strength=product_features,
-            tone_manner=tone_and_manner,
-            keyword=must_include_keywords
-        )
-        st.info(get_gpt_response(client, prompt, config['openai_model']))
+        generate_ad_copy(client, product_name, product_features, must_include_keywords, brand_name, tone_and_manner, brand_core_value)
+
+def generate_ad_copy(client, product_name, product_features, must_include_keywords, brand_name, tone_and_manner, brand_core_value):
+    prompt = prompt_template.format(
+        name=product_name,
+        com_name=brand_name,
+        value=brand_core_value,
+        strength=product_features,
+        tone_manner=tone_and_manner,
+        keyword=must_include_keywords
+    )
+    st.info(get_gpt_response(client, prompt, config['openai_model']))
 
 if __name__ == '__main__':
     ads_copywriter_program()
